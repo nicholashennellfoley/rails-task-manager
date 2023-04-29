@@ -1,1 +1,10 @@
 <h1 class="title"><%= @task.title %></h1>
+<p class="completed">
+  <%= @task.completed ? 'Completed' : 'TO-DO' %>
+</p>
+<p class="details"><%= @task.details %></p>
+
+<%= link_to "delete",
+  task_path(@task),
+  data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}
+%>
